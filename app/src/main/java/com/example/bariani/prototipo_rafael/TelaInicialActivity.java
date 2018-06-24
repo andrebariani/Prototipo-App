@@ -13,7 +13,7 @@ public class TelaInicialActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_inicial);
 
-        Button next = (Button) findViewById(R.id.next);
+        Button next = (Button) findViewById(R.id.tela_inicial_next);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

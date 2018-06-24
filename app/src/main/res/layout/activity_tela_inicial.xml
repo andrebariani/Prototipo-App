@@ -7,10 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".TelaInicialActivity">
 
-
+    <ImageView
+        android:id="@+id/tela_inicial_imagem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/next"
+        android:id="@+id/tela_inicial_next"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Iniciar"/>

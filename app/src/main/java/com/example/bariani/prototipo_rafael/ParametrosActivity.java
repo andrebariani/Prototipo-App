@@ -2,6 +2,7 @@ package com.example.bariani.prototipo_rafael;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 public class ParametrosActivity extends AppCompatActivity {
 
@@ -9,5 +10,10 @@ public class ParametrosActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parametros);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
     }
 }
