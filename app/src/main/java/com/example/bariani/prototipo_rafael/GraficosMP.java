@@ -34,7 +34,7 @@ public class GraficosMP extends AppCompatActivity {
         List <Entry> cosEntries7 = new ArrayList<>();
 
         // Obtaining data points by using Math.sin and Math.cos functions
-        for( float i = 0; i < 1000f; i += 50f ) {
+        for( float i = -500; i < 1000f; i += 50f ) {
             sinEntries.add(new Entry(i,2 + (float)Math.sin(i)));
             cosEntries.add(new Entry(i,(float)Math.cos(i)));
             cosEntries2.add(new Entry(i,0.5f+ (float)Math.cos(i)));
@@ -47,7 +47,7 @@ public class GraficosMP extends AppCompatActivity {
 
         List<ILineDataSet> dataSets = new ArrayList<>(); // for adding multiple plots
 
-        LineDataSet sinSet = new LineDataSet(sinEntries,"sin curve");
+        LineDataSet sinSet = new LineDataSet(sinEntries,"corrente de inrush");
         LineDataSet cosSet = new LineDataSet(cosEntries,"quinto");
         LineDataSet cosSet2 = new LineDataSet(cosEntries2,"offset");
         LineDataSet cosSet3 = new LineDataSet(cosEntries3,"fundamental");
@@ -65,18 +65,27 @@ public class GraficosMP extends AppCompatActivity {
         cosSet6.setColor(Color.RED);
         cosSet7.setColor(Color.MAGENTA);
         cosSet.setCircleColor(android.graphics.Color.GREEN);
-        sinSet.setColor(Color.RED);
+        sinSet.setColor(Color.GRAY);
         sinSet.setCircleColor(Color.RED);
 
         sinSet.setCircleRadius(0f);
         cosSet.setCircleRadius(0f);
+
+        sinSet.setDrawCircles(false);
+        cosSet.setDrawCircles(false);
+        cosSet2.setDrawCircles(false);
+        cosSet3.setDrawCircles(false);
+        cosSet4.setDrawCircles(false);
+        cosSet5.setDrawCircles(false);
+        cosSet6.setDrawCircles(false);
+        cosSet7.setDrawCircles(false);
 
         XAxis xAxis = lineChart.getXAxis();
         YAxis yAxisL = lineChart.getAxisLeft();
         YAxis yAxisR = lineChart.getAxisRight();
 
         xAxis.setAxisMaximum(1200f);
-        xAxis.setAxisMinimum(0f);
+        xAxis.setAxisMinimum(-500f);
 
         yAxisL.setAxisMinimum(-5f);
         yAxisL.setAxisMaximum(5f);
