@@ -37,12 +37,12 @@ public class GraficosMP extends AppCompatActivity {
         for( float i = -500; i < 1000f; i += 50f ) {
             sinEntries.add(new Entry(i,2 + (float)Math.sin(i)));
             cosEntries.add(new Entry(i,(float)Math.cos(i)));
-            cosEntries2.add(new Entry(i,0.5f+ (float)Math.cos(i)));
-            cosEntries3.add(new Entry(i,1f+ (float)Math.cos(i)));
-            cosEntries4.add(new Entry(i,1.5f+ (float)Math.cos(i)));
-            cosEntries5.add(new Entry(i,2+ (float)Math.cos(i)));
-            cosEntries6.add(new Entry(i,2.5f+ (float)Math.cos(i)));
-            cosEntries7.add(new Entry(i,3+(float)Math.cos(i)));
+            cosEntries2.add(new Entry(i,0.5f + (float)Math.cos(i)));
+            cosEntries3.add(new Entry(i,1f + (float)Math.cos(i)));
+            cosEntries4.add(new Entry(i,1.5f + (float)Math.cos(i)));
+            cosEntries5.add(new Entry(i,2 + (float)Math.cos(i)));
+            cosEntries6.add(new Entry(i,2.5f + (float)Math.cos(i)));
+            cosEntries7.add(new Entry(i,3 +(float)Math.cos(i)));
         }
 
         List<ILineDataSet> dataSets = new ArrayList<>(); // for adding multiple plots
@@ -64,8 +64,10 @@ public class GraficosMP extends AppCompatActivity {
         cosSet5.setColor(Color.YELLOW);
         cosSet6.setColor(Color.RED);
         cosSet7.setColor(Color.MAGENTA);
+        cosSet7.setLineWidth(5f);
         cosSet.setCircleColor(android.graphics.Color.GREEN);
         sinSet.setColor(Color.GRAY);
+        sinSet.setLineWidth(1f);
         sinSet.setCircleColor(Color.RED);
 
         sinSet.setCircleRadius(0f);
