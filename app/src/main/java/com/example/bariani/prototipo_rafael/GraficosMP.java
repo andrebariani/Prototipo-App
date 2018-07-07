@@ -1,9 +1,11 @@
 package com.example.bariani.prototipo_rafael;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.bariani.prototipo_rafael.modelo.Parametros;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
@@ -22,6 +24,9 @@ public class GraficosMP extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_graficos_mp);
 
+        Intent intent = getIntent();
+        Parametros parametros = (Parametros) intent.getSerializableExtra("parametros");
+
         LineChart lineChart = (LineChart) findViewById(R.id.chart);// Activity
 
         List <Entry> sinEntries = new ArrayList<>(); // List to store data-points of sine curve
@@ -35,10 +40,10 @@ public class GraficosMP extends AppCompatActivity {
 
         // Obtaining data points by using Math.sin and Math.cos functions
         for( float i = -500; i < 1000f; i += 50f ) {
-            sinEntries.add(new Entry(i,2 + (float)Math.sin(i)));
+            sinEntries.add(new Entry(i,parametros.getPam1() + (float)Math.sin(i)));
             cosEntries.add(new Entry(i,(float)Math.cos(i)));
-            cosEntries2.add(new Entry(i,0.5f + (float)Math.cos(i)));
-            cosEntries3.add(new Entry(i,1f + (float)Math.cos(i)));
+            cosEntries2.add(new Entry(i,parametros.getPam2() + (float)Math.cos(i)));
+            cosEntries3.add(new Entry(parametros.getPam3(),1f + (float)Math.cos(i)));
             cosEntries4.add(new Entry(i,1.5f + (float)Math.cos(i)));
             cosEntries5.add(new Entry(i,2 + (float)Math.cos(i)));
             cosEntries6.add(new Entry(i,2.5f + (float)Math.cos(i)));
